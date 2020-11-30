@@ -2,7 +2,7 @@
 # importando módulos 
 import random
 
-async def c_s(ctx, pergunta):
+async def comando_s(ctx, pergunta):
     # recebendo um número aleatório entre de 0 a 1
     resposta = random.randint(0,1)
 

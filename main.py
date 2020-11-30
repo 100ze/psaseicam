@@ -5,7 +5,7 @@ from discord.ext import commands
 from datetime import datetime
 
 #importando comandos
-from comandos.s.s import c_s
+from comandos.s.s import comando_s
 
 # pegando o token e o prefixo do bot
 load_dotenv()
@@ -24,7 +24,7 @@ async def on_ready():
 
 # adicionando comandos
 @bot.command(name='s')
-async def comando_s(ctx, *, pergunta):
-    await c_s(ctx, pergunta) 
+async def c_s(ctx, *, pergunta):
+    await comando_s(ctx, pergunta) 
 
 bot.run(TOKEN)
