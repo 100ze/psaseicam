@@ -1,18 +1,18 @@
 # Comando !s
 # importando módulos 
 import random
+import discord
 
 async def criaEmbeds(ctx):
     bot_info = await ctx.bot.application_info() 
-    imagem_bot = bot_info.icon_url
-    nome_bot = bot_info.name 
-
-    print(nome_bot)
-    print(imagem_bot)
+    embed_cor = discord.Colour(0).from_rgb(245, 137, 61)
+    
+    return discord.Embed(colour=embed_cor).set_author(
+            name = bot_info.name,
+            icon_url = bot_info.icon_url
+            )
 
 async def comando_s(ctx, pergunta):
-    await criaEmbeds(ctx)
-
     # recebendo um número aleatório entre de 0 a 1
     resposta = random.randint(0,1)
 
@@ -23,3 +23,4 @@ async def comando_s(ctx, pergunta):
 
     # marcando e respondendo o usuário que fez a pergunta
     await ctx.send('{} {} {}'.format(ctx.author.mention, pergunta, resposta))
+    await ctx.send(embed = await criaEmbeds(ctx))
