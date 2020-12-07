@@ -15,7 +15,7 @@ PREFIX = os.getenv('PREFIX')
 # definindo o prefixo do bot e armazenando o objeto 'bot'
 bot = commands.Bot(command_prefix=PREFIX)
 
-# mostrando algo no terminal quando o client se conectar
+# mostrando hora no terminal quando o client se conectar
 @bot.event
 async def on_ready():
     nome_bot = bot.user

@@ -13,6 +13,12 @@ async def criaEmbeds(ctx):
             )
 
 async def comando_s(ctx, pergunta):
+    # tratando a mensagem 
+    # retirando espaços em branco
+    pergunta = pergunta.strip()
+    # limpando menções do usuário
+    pergunta = discord.utils.escape_mentions(pergunta)
+
     # recebendo um número aleatório entre de 0 a 1
     resposta = random.randint(0,1)
 
@@ -23,4 +29,4 @@ async def comando_s(ctx, pergunta):
 
     # marcando e respondendo o usuário que fez a pergunta
     await ctx.send('{} {} {}'.format(ctx.author.mention, pergunta, resposta))
-    await ctx.send(embed = await criaEmbeds(ctx))
+    #await ctx.send(embed = await criaEmbeds(ctx))
