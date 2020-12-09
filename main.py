@@ -6,6 +6,7 @@ from datetime import datetime
 
 #importando comandos
 from comandos.s.s import comando_s
+from comandos.quem.quem import comando_quem
 
 # pegando o token e o prefixo do bot
 load_dotenv()
@@ -26,5 +27,9 @@ async def on_ready():
 @bot.command(name='s')
 async def c_s(ctx, *, pergunta):
     await comando_s(ctx, pergunta) 
+
+@bot.command(name='quem')
+async def c_quem(ctx):
+    await comando_quem(ctx) 
 
 bot.run(TOKEN)
